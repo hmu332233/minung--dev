@@ -1,34 +1,42 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import styles from '../styles.css';
-import { change_keycode } from '../actions'
+import { change_keycode, change_key } from '../actions';
 
 class App extends React.Component {
-  
-   constructor(props) {
-     super(props);
-     
-   }
-  
+  constructor(props) {
+    super(props);
+    
+    this.handleKeyDown = this.handleKeyDown.bind(this);
+  }
+
+  handleKeyDown(e) {
+    this.props.change_keycode(e.keyCode);
+    this.props.change_key(e.key);
+  }
+
   render() {
     return (
-      <div className={styles.blue}>{this.props.keycode}</div>
-    )
-  } 
-}
-
-let mapStateToProps = (state) => {
-  console.log(state);
-  return {
-    keycode: state.keycodeViewer.keycode
-  };
-}
-
-let mapDispatchToProps = (dispatch) => {
-  return {
-    change_keycode: (keycode) => dispatch(change_keycode(keycode)),
+      <div className={styles.blue} onKeyDown={this.handleKeyDown} tabIndex="0">
+        {this.props.keycode} {this.props.keyName}
+      </div>
+    );
   }
 }
+
+let mapStateToProps = state => {
+  return {
+    keycode: state.keycodeViewer.keycode,
+    keyName: state.keycodeViewer.keyName
+  };
+};
+
+let mapDispatchToProps = dispatch => {
+  return {
+    change_keycode: (keycode) => dispatch(change_keycode(keycode)),
+    change_key: (key) => dispatch(change_key(key)),
+  };
+};
 
 App = connect(mapStateToProps, mapDispatchToProps)(App);
 
