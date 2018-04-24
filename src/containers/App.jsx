@@ -2,11 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 import styles from '../styles.css';
 import { change_keycode, change_key } from '../actions';
+import Tabs from '../components/Tabs.jsx';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    
+
     this.handleKeyDown = this.handleKeyDown.bind(this);
   }
 
@@ -17,8 +18,11 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className={styles.blue} onKeyDown={this.handleKeyDown} tabIndex="0">
-        {this.props.keycode} {this.props.keyName}
+      <div>
+        <Tabs />
+        <div className={styles.blue} onKeyDown={this.handleKeyDown} tabIndex="0">
+          {this.props.keycode} {this.props.keyName}
+        </div>
       </div>
     );
   }
