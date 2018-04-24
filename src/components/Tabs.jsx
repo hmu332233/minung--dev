@@ -1,47 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import TabNavItem from './TabNavItem.jsx'
+import TabContentPane from './TabContentPane.jsx'
 import { TabContent, TabPane, Nav, NavItem, NavLink } from 'reactstrap';
-
-const TabNavItem = props => {
-  return (
-    <NavItem>
-      <NavLink
-        className={props.active ? 'active' : ''}
-        onClick={() => {
-          props.onClick();
-        }}
-      >
-        {props.text}
-      </NavLink>
-    </NavItem>
-  );
-};
-
-TabNavItem.propTypes = {
-  active: PropTypes.bool,
-  onClick: PropTypes.func,
-  text: PropTypes.string
-};
-
-TabNavItem.defaultProps = {
-  active: false,
-  text: ''
-};
-
-const TabContentPane = props => {
-  return <TabPane tabId={props.tabId}>{props.content}</TabPane>;
-};
-
-TabContentPane.propTypes = {
-  tabId: PropTypes.number,
-  cotent: PropTypes.object,
-};
-
-TabContentPane.defaultProps = {
-  active: false,
-  text: ''
-};
-
 
 class Tabs extends React.Component {
   constructor(props) {
@@ -52,7 +13,7 @@ class Tabs extends React.Component {
     };
 
     this.toggle = this.toggle.bind(this);
-    this.makeTabs = this.makeTabs.bind(this);
+    this.makeElements = this.makeElements.bind(this);
   }
 
   toggle(tab) {
@@ -63,7 +24,7 @@ class Tabs extends React.Component {
     }
   }
 
-  makeTabs() {
+  makeElements() {
     return this.props.tabs.reduce((data, tab, index) => {
         const label = (
           <TabNavItem
@@ -85,8 +46,7 @@ class Tabs extends React.Component {
         data.contents.push(content);
 
         return data;
-      },
-      {
+      }, {
         labels: [],
         contents: []
       }
@@ -94,7 +54,7 @@ class Tabs extends React.Component {
   }
 
   render() {
-    const tabs = this.makeTabs(this.props.tabs);
+    const tabs = this.makeElements(this.props.tabs);
     return (
       <div className={`tabs ${this.props.className}`}>
         <Nav tabs className={`justify-content-${this.props.navJustify}`}>
