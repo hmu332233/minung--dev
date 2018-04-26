@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import styles from '../styles.css';
 import { change_keycode, change_key } from '../actions';
-import Tabs from '../components/Tabs.jsx';
+import { Tabs } from '../components';
 
 class App extends React.Component {
   constructor(props) {
