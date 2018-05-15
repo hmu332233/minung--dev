@@ -1,3 +1,3 @@
-import Tabs from './Tabs';
+import Menus from './Menus';
 
-export { Tabs };
+export { Menus };

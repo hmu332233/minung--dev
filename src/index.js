@@ -1,20 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './containers/App.jsx';
+import { BrowserRouter, Route, Switch  } from 'react-router-dom'
+import { Home, KeyCode, Custom } from './pages';
+// Redux
 import { Provider } from 'react-redux';
 import configureStore from './store/configureStore';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 const store = configureStore();
 
-const rootEl = document.getElementById('app');
+var ghProjectName = window.location.pathname.split('/')[1];
 
-const render = Component =>
-  ReactDOM.render(
-    <Provider store={store}>
-      <Component />
-    </Provider>,
-    rootEl
-  );
-
-render(App);
+ReactDOM.render(
+  <Provider store={store}>
+    <BrowserRouter>
+      <Switch>
+        <Route path={`/${ghProjectName}/keycode`} component={KeyCode} />
+        <Route path={`/${ghProjectName}/:path`} component={Custom} />
+        <Route path={`/${ghProjectName}`} component={Home} />
+      </Switch>
+    </BrowserRouter>
+  </Provider>
+  , document.getElementById('app')
+);

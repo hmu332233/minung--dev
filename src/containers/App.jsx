@@ -1,8 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import styles from '../styles.css';
+import styles from '../styles/styles.scss';
 import { change_keycode, change_key } from '../actions';
-import { Tabs } from '../components';
 
 class App extends React.Component {
   constructor(props) {
@@ -19,9 +18,10 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Tabs />
-        <div className={styles.blue} onKeyDown={this.handleKeyDown} tabIndex="0">
-          {this.props.keycode} {this.props.keyName}
+        <div className="container">
+          <div className={styles.blue} onKeyDown={this.handleKeyDown} tabIndex="0">
+            {this.props.keycode} {this.props.keyName}
+          </div>
         </div>
       </div>
     );
@@ -37,8 +37,8 @@ let mapStateToProps = state => {
 
 let mapDispatchToProps = dispatch => {
   return {
-    change_keycode: (keycode) => dispatch(change_keycode(keycode)),
-    change_key: (key) => dispatch(change_key(key)),
+    change_keycode: keycode => dispatch(change_keycode(keycode)),
+    change_key: key => dispatch(change_key(key))
   };
 };
 
