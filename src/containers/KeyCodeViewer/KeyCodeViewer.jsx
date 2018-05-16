@@ -18,11 +18,12 @@ class KeyCodeViewer extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className="container">
-          <div className={styles.blue} onKeyDown={this.handleKeyDown} tabIndex="0">
-            {this.props.keycode} {this.props.keyName}
-          </div>
+      <div className={styles.KeyCodeViewer} onKeyDown={this.handleKeyDown} tabIndex="0">
+        <div>
+          {this.props.keycode}
+        </div>
+        <div>
+          {this.props.keyName}
         </div>
       </div>
     );

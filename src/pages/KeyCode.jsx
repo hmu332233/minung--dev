@@ -13,9 +13,8 @@ class KeyCode  extends React.Component {
 
   render() {
     return (
-      <div>
+      <div style={{height: '100vh'}}>
         <Menus />
-        <div>path: /KeyCode</div>
         <KeyCodeViewer />
       </div>
     );
