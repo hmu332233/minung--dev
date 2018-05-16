@@ -2,7 +2,7 @@ import React from 'react';
 import styles from '../styles/styles.scss';
 import { connect } from 'react-redux';
 import { CountView } from '../components';
-import App from '../containers/App';
+import { KeyCodeViewer } from '../containers';
 import { increment } from '../actions';
 import { Menus } from '../components';
 
@@ -16,7 +16,7 @@ class KeyCode  extends React.Component {
       <div>
         <Menus />
         <div>path: /KeyCode</div>
-        <App />
+        <KeyCodeViewer />
       </div>
     );
   }

@@ -1,9 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import styles from '../styles/styles.scss';
-import { change_keycode, change_key } from '../actions';
+import { change_keycode, change_key } from 'actions';
 
-class App extends React.Component {
+import styles from './KeyCodeViewer.scss';
+
+class KeyCodeViewer extends React.Component {
   constructor(props) {
     super(props);
 
@@ -42,6 +43,6 @@ let mapDispatchToProps = dispatch => {
   };
 };
 
-App = connect(mapStateToProps, mapDispatchToProps)(App);
+KeyCodeViewer = connect(mapStateToProps, mapDispatchToProps)(KeyCodeViewer);
 
-export default App;
+export default KeyCodeViewer;
