@@ -11,20 +11,23 @@ class Menus extends React.Component {
 
   render() {
     return (
-      <div>
-        <ul>
-          <li>
-            <Link to={`/${ghProjectName}`}>Home</Link>
-          </li>
-          <li>
-            <Link to={`/${ghProjectName}/keycode`}>KeyCode</Link>
-          </li>
-          <li>
-            <Link to={`/${ghProjectName}/custom`}>Custom</Link>
-          </li>
-        </ul>
-        <hr />
-      </div>
+      <ul className="nav flex-column">
+        <li className="nav-item">
+          <Link class="nav-link active" to={`/${ghProjectName}`}>
+            Home
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to={`/${ghProjectName}/keycode`}>
+            KeyCode
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link className="nav-link" to={`/${ghProjectName}/custom`}>
+            Custom
+          </Link>
+        </li>
+      </ul>
     );
   }
 }
