@@ -1,8 +1,11 @@
 import React from 'react';
-import styles from '../styles/styles.scss';
+import PropTypes from 'prop-types';
+
 import { Link } from 'react-router-dom';
 
-var ghProjectName = window.location.pathname.split('/')[1];
+import styles from './Menus.scss';
+
+const ghProjectName = window.location.pathname.split('/')[1];
 
 class Menus extends React.Component {
   constructor(props) {
@@ -11,7 +14,7 @@ class Menus extends React.Component {
 
   render() {
     return (
-      <ul className="nav flex-column">
+      <ul className={`nav flex-column ${styles.Menus}`}>
         <li className="nav-item">
           <Link class="nav-link active" to={`/${ghProjectName}`}>
             Home
@@ -31,5 +34,10 @@ class Menus extends React.Component {
     );
   }
 }
+
+Menus.propTypes = {
+};
+Menus.defaultProps = {
+};
 
 export default Menus;
