@@ -26,7 +26,7 @@ class Menus extends React.Component {
     return (
       <ul className={`nav flex-column ${styles.Menus}`}>
         <li className="nav-item">
-          <Link class="nav-link active" to={`/${ghProjectName}`}>
+          <Link className="nav-link active" to={`/${ghProjectName}`}>
             Home
           </Link>
         </li>
