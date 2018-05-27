@@ -1,3 +1,4 @@
 import KeyCodeViewer from './KeyCodeViewer';
+import RunExample from './RunExample';
 
-export { KeyCodeViewer };
+export { KeyCodeViewer, RunExample };
