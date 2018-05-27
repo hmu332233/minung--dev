@@ -22,11 +22,16 @@ class RunExample extends React.Component {
   render() {
     return (
       <div>
-        <div>
-          <Highlighter code={`${this.props.runFunction}`} />
-          <button type="button" class="btn btn-success btn-sm" onClick={this.run}>
-            Run
-          </button>
+        <div className={styles.RunExample__wrapper}>
+          <Highlighter
+            className={styles.RunExample__highlighter}
+            code={`${this.props.runFunction}`}
+          />
+          <div className={styles.RunExample__buttonWrapper}>
+            <button type="button" class="btn btn-success btn-sm" onClick={this.run}>
+              Run
+            </button>
+          </div>
         </div>
         {this.state.isRunning ? (
           <Runner code={`${this.props.def}\n\n${this.props.runFunction}`} />

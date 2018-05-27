@@ -11,7 +11,7 @@ class Highlighter extends React.Component {
   }
   render() {
     return (
-      <SyntaxHighlighter language="javascript" style={atomDark} >
+      <SyntaxHighlighter className={this.props.className} language="javascript" style={atomDark} >
         {this.props.code}
       </SyntaxHighlighter>
     );
@@ -19,7 +19,8 @@ class Highlighter extends React.Component {
 }
 
 Highlighter.propTypes = {
-  code: PropTypes.string
+  code: PropTypes.string,
+  className: PropTypes.string
 };
 Highlighter.defaultProps = {};
 
