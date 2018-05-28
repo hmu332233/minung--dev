@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from '../styles/styles.scss';
-import { Menus, Highlighter, Runner } from 'components';
-import { RunExample } from 'containers';
+import { Menus, DocsViewer } from 'components';
 
 const data = {
   name: 'pagination',
@@ -23,21 +22,11 @@ class Docs extends React.Component {
   render() {
     // TODO:: markdown 모양으로 작성 가능하도록
     // TODO:: 코드 보이고 코드 결과 실행해서 볼 수 있고
-
-    const runExampleElements = data.runFunctions.map(runFunction => {
-      return (
-        <RunExample def={data.def} runFunction={runFunction} />
-      );
-    });
-
     return (
       <div>
         <Menus />
         <div className="container">
-          <h3>{data.name}</h3>
-          <p>{data.description}</p>
-          <Highlighter code={data.def} />
-          {runExampleElements}
+          <DocsViewer {...data} />
         </div>
       </div>
     );

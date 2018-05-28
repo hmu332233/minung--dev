@@ -1,0 +1,40 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import styles from './DocsViewer.scss';
+
+import { Highlighter, Runner } from 'components';
+import { RunExample } from 'containers';
+
+class DocsViewer extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+  render() {
+
+    const runExampleElements = this.props.runFunctions.map(runFunction => {
+      return (
+        <RunExample def={this.props.def} runFunction={runFunction} />
+      );
+    });
+
+    return (
+      <div>
+        <h3>{this.props.name}</h3>
+        <p>{this.props.description}</p>
+        <Highlighter code={this.props.def} />
+        {runExampleElements}
+      </div>
+    );
+  }
+}
+
+DocsViewer.propTypes = {
+  name: PropTypes.string,
+  description: PropTypes.string,
+  def: PropTypes.string,
+  runFunctions: PropTypes.array
+};
+DocsViewer.defaultProps = {
+};
+
+export default DocsViewer;
