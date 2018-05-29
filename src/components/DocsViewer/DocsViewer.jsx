@@ -11,9 +11,9 @@ class DocsViewer extends React.Component {
   }
   render() {
 
-    const runExampleElements = this.props.runFunctions.map(runFunction => {
+    const runExampleElements = this.props.runFunctions.map((runFunction, index) => {
       return (
-        <RunExample def={this.props.def} runFunction={runFunction} />
+        <RunExample key={index} def={this.props.def} runFunction={runFunction} />
       );
     });
 

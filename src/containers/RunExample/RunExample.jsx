@@ -28,7 +28,7 @@ class RunExample extends React.Component {
             code={`${this.props.runFunction}`}
           />
           <div className={styles.RunExample__buttonWrapper}>
-            <button type="button" class="btn btn-success btn-sm" onClick={this.run}>
+            <button type="button" className="btn btn-success btn-sm" onClick={this.run}>
               Run
             </button>
           </div>
