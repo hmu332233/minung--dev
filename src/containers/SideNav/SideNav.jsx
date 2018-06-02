@@ -40,7 +40,6 @@ class SideNav extends React.Component {
   }
 }
 
-
 SideNav.propTypes = {
   items: PropTypes.array,
   itemClickHandler: PropTypes.func
