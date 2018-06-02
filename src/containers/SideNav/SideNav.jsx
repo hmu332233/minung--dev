@@ -7,8 +7,22 @@ import Input from 'components/Input';
 class SideNav extends React.Component {
   constructor(props) {
     super(props);
-
+    this.state = {
+      shownItems: props.items
+    }
+    
+    this.handleSearchInputChange = this.handleSearchInputChange.bind(this);
     this.handleItemClick = this.handleItemClick.bind(this);
+  }
+  
+  handleSearchInputChange(text) {
+    const filteredItems = this.props.items.filter((item) => {
+      return item.name.toLowerCase().includes(text);
+    });
+    
+    this.setState({
+      shownItems: filteredItems
+    });
   }
   
   handleItemClick(itemName) {
@@ -19,7 +33,7 @@ class SideNav extends React.Component {
   
   render() {
     
-    const namItemElements = this.props.items.map((item) => {
+    const namItemElements = this.state.shownItems.map((item) => {
       return (
         <li className="nav-item" onClick={ () => { this.handleItemClick(item.name) }}>
           <a className="nav-link" href="#">{item.name}</a>
@@ -32,7 +46,7 @@ class SideNav extends React.Component {
         <div className={styles.SideNav__search}>
           <Input 
             textChangeHandler={ (value) => {
-              console.log(value);
+              this.handleSearchInputChange(value);
             }}
           />
         </div>
