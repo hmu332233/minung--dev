@@ -2,10 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './SideNav.scss';
 
+import Input from 'components/Input';
+
 class SideNav extends React.Component {
   constructor(props) {
     super(props);
-    
+
     this.handleItemClick = this.handleItemClick.bind(this);
   }
   
@@ -28,7 +30,11 @@ class SideNav extends React.Component {
     return (
       <div className={styles.SideNav}>
         <div className={styles.SideNav__search}>
-          search section
+          <Input 
+            textChangeHandler={ (value) => {
+              console.log(value);
+            }}
+          />
         </div>
         <div className={styles.SideNav__nav}>
           <ul className={`nav flex-column`}>
