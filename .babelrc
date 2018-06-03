@@ -11,7 +11,8 @@
           "components": "./src/components",
           "containers": "./src/containers",
           "actions": "./src/actions",
-          "pages": "./src/pages"
+          "pages": "./src/pages",
+          "data": "./src/data"
         }
       }      
     ]
