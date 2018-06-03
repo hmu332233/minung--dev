@@ -20,7 +20,7 @@ class DocsViewer extends React.Component {
     return (
       <div>
         <h3>{this.props.name}</h3>
-        <p>{this.props.description}</p>
+        <p className={styles.DocsViewer__description}>{this.props.description}</p>
         <Highlighter code={this.props.def} />
         {runExampleElements}
       </div>

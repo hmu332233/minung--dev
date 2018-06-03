@@ -1,6 +1,6 @@
 const pagination = {
   name: 'pagination',
-  description: '배열과 페이지당 사이즈, 페이지 번호를 받아 페이지에 해당하는 배열만큼을 리턴한다',
+  description: '배열의 페이징을 해준다.\n배열과 페이지당 사이즈, 페이지 번호를 받아 페이지에 해당하는 배열만큼을 리턴한다.',
   def: `function paginate (array, page_size, page_number) {
   return array.slice(page_number * page_size, (page_number + 1) * page_size);
 }`,
