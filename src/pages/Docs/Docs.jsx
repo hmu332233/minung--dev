@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Docs.scss';
 import { Menus, DocsViewer } from 'components';
@@ -27,7 +27,7 @@ class Docs extends React.Component {
     // TODO:: markdown 모양으로 작성 가능하도록
     // TODO:: 코드 보이고 코드 결과 실행해서 볼 수 있고
     return (
-      <div>
+      <Fragment>
         <Menus />
         <div className={styles.Docs}>
           <SideNav
@@ -40,7 +40,7 @@ class Docs extends React.Component {
             <DocsViewer {...this.state.shownDocItem} />
           </div>
         </div>
-      </div>
+      </Fragment>
     );
   }
 }
