@@ -15,21 +15,25 @@ class Input extends React.Component {
     this.setState({
       value
     });
-    
+
     if (this.props.textChangeHandler) {
-      this.props.textChangeHandler(value);
+      this.props.textChangeHandler({
+        value,
+        event: e
+      });
     }
   }
   render() {
     return (
-      <input type="text" value={this.state.value} onChange={this.handleChange} />
+      <input type="text" value={this.state.value} onKeyDown={this.props.keyDownHandler} onChange={this.handleChange} />
     );
   }
 }
 
 
 Input.propTypes = {
-  textChangeHandler: PropTypes.func
+  textChangeHandler: PropTypes.func,
+  keyDownHandler: PropTypes.func
 };
 Input.defaultProps = {
 };

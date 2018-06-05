@@ -8,6 +8,7 @@ class SideNav extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      filterType: 'title', // 'title', 'desc'
       shownItems: props.items
     }
     
@@ -31,6 +32,13 @@ class SideNav extends React.Component {
    } 
   }
   
+  toggleFilterType() {
+    const filterTypeIsTitle = this.state.filterType === 'title';
+    this.setState({
+      filterType: filterTypeIsTitle ? 'desc' : 'title'
+    })
+  }
+  
   render() {
     
     const namItemElements = this.state.shownItems.map((item) => {
@@ -44,8 +52,15 @@ class SideNav extends React.Component {
     return (
       <div className={styles.SideNav}>
         <div className={styles.SideNav__search}>
+          {this.state.filterType}
           <Input 
-            textChangeHandler={ (value) => {
+            keyDownHandler={ (e) => {
+              if (e.keyCode === 9) {
+                this.toggleFilterType();
+                e.preventDefault();
+              }
+            }}
+            textChangeHandler={ ({ value, event }) => {
               this.handleSearchInputChange(value);
             }}
           />
