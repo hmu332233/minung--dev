@@ -17,10 +17,16 @@ class SideNav extends React.Component {
   }
   
   handleSearchInputChange(text) {
-    const filteredItems = this.props.items.filter((item) => {
+    const titleFilter = (item) => {
       return item.name.toLowerCase().includes(text);
-    });
+    }
+    const descFilter = (item) => {
+      return item.description.includes(text);
+    }
     
+    const filter = this.state.filterType === 'title' ? titleFilter : descFilter;
+    
+    const filteredItems = this.props.items.filter(filter);
     this.setState({
       shownItems: filteredItems
     });
