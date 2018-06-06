@@ -25,7 +25,7 @@ class Input extends React.Component {
   }
   render() {
     return (
-      <input type="text" value={this.state.value} onKeyDown={this.props.keyDownHandler} onChange={this.handleChange} />
+      <input className={this.props.className} type="text" value={this.state.value} onKeyDown={this.props.keyDownHandler} onChange={this.handleChange} />
     );
   }
 }
@@ -33,9 +33,11 @@ class Input extends React.Component {
 
 Input.propTypes = {
   textChangeHandler: PropTypes.func,
-  keyDownHandler: PropTypes.func
+  keyDownHandler: PropTypes.func,
+  className: PropTypes.string
 };
 Input.defaultProps = {
+  className: ''
 };
 
 export default Input;
