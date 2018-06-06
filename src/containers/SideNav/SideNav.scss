@@ -1,3 +1,12 @@
 .SideNav {
   border-right: 1px solid #efefef;
+  
+  .SideNav__search {
+    &--title {
+      border-color: red;
+    }
+    &--desc {
+      border-color: blue;
+    }
+  }
 }

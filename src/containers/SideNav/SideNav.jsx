@@ -59,7 +59,8 @@ class SideNav extends React.Component {
       <div className={styles.SideNav}>
         <div className={styles.SideNav__search}>
           {this.state.filterType}
-          <Input 
+          <Input
+            className={styles[`SideNav__search--${this.state.filterType}`]}
             keyDownHandler={ (e) => {
               if (e.keyCode === 9) {
                 this.toggleFilterType();
