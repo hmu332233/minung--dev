@@ -16,7 +16,7 @@ class Menus extends React.Component {
     const menuElements = this.props.menus.map((menu) => {
       return (
         <li className="nav-item">
-          <Link className="nav-link" to={`/${ghProjectName}${menu.link}`}>
+          <Link className={`nav-link ${styles.Menus__item}`} to={`/${ghProjectName}${menu.link}`}>
             {menu.text}
           </Link>
         </li>
@@ -24,9 +24,9 @@ class Menus extends React.Component {
     });
     
     return (
-      <ul className={`nav flex-column ${styles.Menus}`}>
+      <ul className={`nav ${styles.Menus}`}>
         <li className="nav-item">
-          <Link className="nav-link active" to={`/${ghProjectName}`}>
+          <Link className={`nav-link active ${styles.Menus__item}`} to={`/${ghProjectName}`}>
             Home
           </Link>
         </li>

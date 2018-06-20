@@ -1,6 +1,13 @@
-html, body {
-    height: 100%; /*both html and body*/
+@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+.jejugothic * {
+  font-family: 'Jeju Gothic', sans-serif;
+}
+
+html,
+body {
+  height: 100%; /*both html and body*/
+  font-family: 'Jeju Gothic';
 }
 body {
-    margin: 0; /*reset default margin*/
+  margin: 0; /*reset default margin*/
 }
