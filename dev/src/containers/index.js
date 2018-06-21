@@ -1,5 +1,6 @@
+import BasicLayout from './BasicLayout';
 import KeyCodeViewer from './KeyCodeViewer';
 import RunExample from './RunExample';
 import SideNav from './SideNav';
 
-export { KeyCodeViewer, RunExample, SideNav };
+export { KeyCodeViewer, RunExample, SideNav, BasicLayout };

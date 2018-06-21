@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from '../styles/styles.scss';
-import { Menus } from '../components';
+import { BasicLayout } from 'containers';
 
 
 var ghProjectName = window.location.pathname.split('/')[1];
@@ -12,10 +12,9 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div>
-        <Menus />
+      <BasicLayout>
         <div className={styles.blue}>Hello world!</div>
-      </div>
+      </BasicLayout>
     );
   }
 }

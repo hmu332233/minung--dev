@@ -2,9 +2,8 @@ import React from 'react';
 import styles from '../styles/styles.scss';
 import { connect } from 'react-redux';
 import { CountView } from '../components';
-import { KeyCodeViewer } from '../containers';
 import { increment } from '../actions';
-import { Menus } from '../components';
+import { BasicLayout, KeyCodeViewer } from 'containers';
 
 class KeyCode  extends React.Component {
   constructor(props) {
@@ -13,10 +12,9 @@ class KeyCode  extends React.Component {
 
   render() {
     return (
-      <div style={{height: '100vh'}}>
-        <Menus />
+      <BasicLayout>
         <KeyCodeViewer />
-      </div>
+      </BasicLayout>
     );
   }
 }
