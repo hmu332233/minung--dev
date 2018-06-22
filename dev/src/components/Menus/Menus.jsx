@@ -24,14 +24,18 @@ class Menus extends React.Component {
     });
     
     return (
-      <ul className={`nav ${styles.Menus}`}>
-        <li className="nav-item">
-          <Link className={`nav-link active ${styles.Menus__item}`} to={`/${ghProjectName}`}>
-            Home
-          </Link>
-        </li>
-        {menuElements}
-      </ul>
+      <div className={styles.Menus}>
+        <div className="container">
+          <ul className={`nav`}>
+            <li className="nav-item">
+              <Link className={`nav-link active ${styles.Menus__item}`} to={`/${ghProjectName}`}>
+                Home
+              </Link>
+            </li>
+            {menuElements}
+          </ul>
+        </div>
+      </div>
     );
   }
 }

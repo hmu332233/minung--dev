@@ -8,8 +8,10 @@ class Header extends React.Component {
   }
   render() {
     return (
-      <div>
-        <h6>minung--dev</h6>
+      <div className={styles.Header}>
+        <div className="container">
+          <h5 className={styles.Header__title}>minung--dev</h5>
+        </div>
       </div>
     );
   }
