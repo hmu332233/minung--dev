@@ -29,15 +29,18 @@ class Docs extends React.Component {
     // TODO:: 코드 보이고 코드 결과 실행해서 볼 수 있고
     return (
       <BasicLayout>
-        <div className={styles.Docs}>
-          <SideNav
+        <div className={`row ${styles.Docs}`}>
+          <div className="col-2">
+            <SideNav
             items={this.props.docsItems}
             itemClickHandler={itemName => {
               this.changeShownDocItem(itemName);
             }}
           />
-          <DocsViewer {...this.state.shownDocItem} />
-
+          </div>
+          <div className="col-10">
+            <DocsViewer {...this.state.shownDocItem} />
+          </div>
         </div>
       </BasicLayout>
     );
