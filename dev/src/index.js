@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import "tabler-react/dist/Tabler.css";
 import { BrowserRouter, Route, Switch  } from 'react-router-dom'
 import { Home, KeyCode, Custom, Docs } from './pages';
 // Redux

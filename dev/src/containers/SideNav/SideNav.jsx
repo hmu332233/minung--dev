@@ -49,8 +49,8 @@ class SideNav extends React.Component {
     
     const namItemElements = this.state.shownItems.map((item) => {
       return (
-        <li className="nav-item" onClick={ () => { this.handleItemClick(item.name) }}>
-          <a className="nav-link" href="#">{item.name}</a>
+        <li className="nav-item p-0" onClick={ () => { this.handleItemClick(item.name) }}>
+          <a className={`${styles.SideNav__item}`} href="#">{item.name}</a>
         </li>
       );
     });
