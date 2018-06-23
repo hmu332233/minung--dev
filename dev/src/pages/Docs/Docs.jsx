@@ -36,9 +36,8 @@ class Docs extends React.Component {
               this.changeShownDocItem(itemName);
             }}
           />
-          <div className="container">
-            <DocsViewer {...this.state.shownDocItem} />
-          </div>
+          <DocsViewer {...this.state.shownDocItem} />
+
         </div>
       </BasicLayout>
     );

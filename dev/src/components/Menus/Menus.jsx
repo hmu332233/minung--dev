@@ -15,7 +15,7 @@ class Menus extends React.Component {
   render() {
     const menuElements = this.props.menus.map((menu) => {
       return (
-        <li className="nav-item">
+        <li className="nav-item pl-0">
           <Link className={`nav-link ${styles.Menus__item}`} to={`/${ghProjectName}${menu.link}`}>
             {menu.text}
           </Link>
@@ -27,7 +27,7 @@ class Menus extends React.Component {
       <div className={styles.Menus}>
         <div className="container">
           <ul className={`nav`}>
-            <li className="nav-item">
+            <li className="nav-item pl-0">
               <Link className={`nav-link active ${styles.Menus__item}`} to={`/${ghProjectName}`}>
                 Home
               </Link>
