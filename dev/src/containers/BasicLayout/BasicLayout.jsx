@@ -15,7 +15,9 @@ class BasicLayout extends React.Component {
         <Header />
         <Menus />
         <div className={styles.BasicLayout__contents}>
-          {this.props.children}
+          <div className="container">
+            {this.props.children}
+          </div>
         </div>
       </div>
     );

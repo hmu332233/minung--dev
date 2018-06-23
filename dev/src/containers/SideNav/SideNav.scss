@@ -1,5 +1,5 @@
 .SideNav {
-  border-right: 1px solid #efefef;
+  
   
   .SideNav__search {
     &--title {
@@ -8,5 +8,9 @@
     &--desc {
       border-color: blue;
     }
+  }
+  
+  .SideNav__item {
+    color: #313338;
   }
 }
