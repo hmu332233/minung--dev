@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './DocsViewer.scss';
 
+import { Card } from 'reactstrap';
+
 import { Highlighter, Runner } from 'components';
 import { RunExample } from 'containers';
 
@@ -18,12 +20,12 @@ class DocsViewer extends React.Component {
     });
 
     return (
-      <div>
+      <Card body>
         <h3>{this.props.name}</h3>
         <p className={styles.DocsViewer__description}>{this.props.description}</p>
         <Highlighter code={this.props.def} />
         {runExampleElements}
-      </div>
+      </Card>
     );
   }
 }

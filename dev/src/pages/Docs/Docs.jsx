@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import styles from './Docs.scss';
 import { Menus, DocsViewer } from 'components';
-import { SideNav } from 'containers';
+import { BasicLayout, SideNav } from 'containers';
 import docsData from 'data/docsData';
 
 class Docs extends React.Component {
@@ -28,20 +28,21 @@ class Docs extends React.Component {
     // TODO:: markdown 모양으로 작성 가능하도록
     // TODO:: 코드 보이고 코드 결과 실행해서 볼 수 있고
     return (
-      <Fragment>
-        <Menus />
-        <div className={styles.Docs}>
-          <SideNav
+      <BasicLayout activeMenu="Docs">
+        <div className={`row ${styles.Docs}`}>
+          <div className="col-2">
+            <SideNav
             items={this.props.docsItems}
             itemClickHandler={itemName => {
               this.changeShownDocItem(itemName);
             }}
           />
-          <div className="container">
+          </div>
+          <div className="col-10">
             <DocsViewer {...this.state.shownDocItem} />
           </div>
         </div>
-      </Fragment>
+      </BasicLayout>
     );
   }
 }

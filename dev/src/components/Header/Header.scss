@@ -1,0 +1,11 @@
+.Header {
+  display: flex;
+  align-items: center;
+  height: 4.0625rem; // 65px
+  background: #fff;
+  border-bottom: 1px solid #a5a5a5;
+}
+
+.Header__title {
+  margin-bottom: 0;
+}
