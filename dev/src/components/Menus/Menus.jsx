@@ -14,9 +14,10 @@ class Menus extends React.Component {
 
   render() {
     const menuElements = this.props.menus.map((menu) => {
+      const isActived = menu.text === this.props.activeMenu;
       return (
         <li className="nav-item">
-          <Link className={`nav-link ${styles.Menus__item}`} to={`/${ghProjectName}${menu.link}`}>
+          <Link className={`nav-link ${styles.Menus__item} ${isActived ? 'active' : ''}`} to={`/${ghProjectName}${menu.link}`}>
             {menu.text}
           </Link>
         </li>
@@ -27,11 +28,6 @@ class Menus extends React.Component {
       <div className={styles.Menus}>
         <div className="container">
           <ul className={`nav nav-tabs border-0`}>
-            <li className="nav-item">
-              <Link className={`nav-link active ${styles.Menus__item}`} to={`/${ghProjectName}`}>
-                Home
-              </Link>
-            </li>
             {menuElements}
           </ul>
         </div>
@@ -41,10 +37,15 @@ class Menus extends React.Component {
 }
 
 Menus.propTypes = {
+  activeMenu: PropTypes.string,
   menus: PropTypes.array
 };
 Menus.defaultProps = {
+  activeMenu: 'Home',
   menus: [{
+    text: 'Home',
+    link: '/'
+  }, {
     text: 'KeyCode',
     link: '/keycode'
   }, {

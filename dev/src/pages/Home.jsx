@@ -12,7 +12,7 @@ class Home extends React.Component {
 
   render() {
     return (
-      <BasicLayout>
+      <BasicLayout activeMenu="Home">
         <div className={styles.blue}>Hello world!</div>
       </BasicLayout>
     );

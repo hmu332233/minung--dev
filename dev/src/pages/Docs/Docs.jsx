@@ -28,7 +28,7 @@ class Docs extends React.Component {
     // TODO:: markdown 모양으로 작성 가능하도록
     // TODO:: 코드 보이고 코드 결과 실행해서 볼 수 있고
     return (
-      <BasicLayout>
+      <BasicLayout activeMenu="Docs">
         <div className={`row ${styles.Docs}`}>
           <div className="col-2">
             <SideNav

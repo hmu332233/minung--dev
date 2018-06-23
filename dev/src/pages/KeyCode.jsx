@@ -12,7 +12,7 @@ class KeyCode  extends React.Component {
 
   render() {
     return (
-      <BasicLayout>
+      <BasicLayout activeMenu="KeyCode">
         <KeyCodeViewer />
       </BasicLayout>
     );
