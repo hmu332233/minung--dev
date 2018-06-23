@@ -10,7 +10,7 @@ class Header extends React.Component {
     return (
       <div className={styles.Header}>
         <div className="container">
-          <h5 className={styles.Header__title}>minung--dev</h5>
+          <h3 className={styles.Header__title}>minung--dev</h3>
         </div>
       </div>
     );
