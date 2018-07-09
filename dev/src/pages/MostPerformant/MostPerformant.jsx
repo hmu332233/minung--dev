@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './MostPerformant.scss';
 
-import { BasicLayout } from 'containers';
+import { PerfortantDiffViewer, BasicLayout } from 'containers';
 
 class MostPerformant extends React.Component {
   constructor(props) {
@@ -11,7 +11,7 @@ class MostPerformant extends React.Component {
   render() {
     return (
       <BasicLayout activeMenu="MostPerformant">
-        sss
+        <PerfortantDiffViewer />
       </BasicLayout>
     );
   }
