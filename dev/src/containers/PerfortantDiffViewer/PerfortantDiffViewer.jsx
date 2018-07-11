@@ -17,16 +17,28 @@ class PerfortantDiffViewer extends React.Component {
       for (let i = 0; i < iterations; i++) eval(fn);
       return performance.now() - before;
     });
-    return times.indexOf(Math.min(...times));
+    
+    return {
+      mostFunctionIndex: times.indexOf(Math.min(...times)),
+      times
+    }
   };
   
   render() {
-    const mostFunc = this.mostPerformant(['for(var i = 1 ; i < 10 ; i++) console.log("a")','for(var i = 1 ; i < 1 ; i++) console.log("b")'], 10)
+    const { functions, iterationCount } = this.props;
+    const mostFunc = this.mostPerformant(functions, iterationCount);
     
     return (
       <div>
         PerfortantDiffViewer
-        {mostFunc}
+        <code>
+          {functions[mostFunc.mostFunctionIndex]}
+        </code>
+        {mostFunc.times.map((time, index) => {
+          return (
+            <div>{time}</div>
+          );
+        })}
       </div>
     );
   }
@@ -36,6 +48,11 @@ class PerfortantDiffViewer extends React.Component {
 PerfortantDiffViewer.propTypes = {
 };
 PerfortantDiffViewer.defaultProps = {
+  functions: [
+    'for(var i = 1 ; i < 10 ; i++) console.log("a")',
+    'for(var i = 1 ; i < 1 ; i++) console.log("b")'
+  ],
+  iterationCount: 10
 };
 
 export default PerfortantDiffViewer;
