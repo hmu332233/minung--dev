@@ -48,10 +48,27 @@ const orderBy = {
   ]
 };
 
+const overwrite = {
+  name: 'overwrite',
+  description: '두 object 사이에서 obj1와 obj2에 공통으로 있는 속성들만 obj1에 덮어씌운다',
+  def: `const overwrite = (object1, object2) => {
+  return Object.keys(object1).reduce((newObject, key) => {
+    if (object2[key]) {
+      newObject[key] = object2[key];
+    }
+    return newObject;
+  }, object1);
+};`,
+  runFunctions: [
+    'overwrite({ a: 1, b: 3}, { a: 2, d: 4}) // { a: 2, b: 3}'
+  ]
+}
+
 const docsData = [
   pagination,
   truncateLongText,
-  orderBy
+  orderBy,
+  overwrite
 ];
 
 export default docsData;
