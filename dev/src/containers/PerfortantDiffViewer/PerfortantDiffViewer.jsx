@@ -30,10 +30,11 @@ class PerfortantDiffViewer extends React.Component {
     
     return (
       <div>
-        PerfortantDiffViewer
+        <h1>mostPerformant</h1>
         <code>
           {functions[mostFunc.mostFunctionIndex]}
         </code>
+        <hr/>
         {mostFunc.times.map((time, index) => {
           return (
             <div>{time}</div>
