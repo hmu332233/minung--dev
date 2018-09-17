@@ -64,11 +64,58 @@ const overwrite = {
   ]
 }
 
+
+
+const getPropertyInJson = {
+  name: 'getPropertyInJson',
+  description: '"user.id"와 같은 형식으로 object에서 값을 찾는다.',
+  def: `const getPropertyInJson = (object, propertyName) => {
+  const parts = propertyName.replace(/\\[([0-9]+)\\]/g, '.$1').split('.');
+
+  let property = object;
+  for (let i = 0 ; i < parts.length ; i++ ) {
+
+    property = property[parts[i]];
+  }
+
+  return property;
+}`,
+  runFunctions: [
+    'getPropertyInJson({ site: { name: "github", users: ["user1", "user2"] }}, "site.users[1]") // user2'
+  ]
+}
+
+const getPropertyInXml = {
+  name: 'getPropertyInXml',
+  description: '"user.id"와 같은 형식으로 xmlString에서 값을 찾는다.',
+  def: `const getPropertyInXml = (xmlString, propertyName) => {
+  const parser = new DOMParser();
+  const xmlDoc = parser.parseFromString(xmlString, 'text/xml');
+
+  const parts = propertyName.split('.');
+
+  let property = xmlDoc;
+  for (let i = 0 ; i < parts.length ; i++ ) {
+    const matched = parts[i].match(/(.+)(\\[(\\d+)\\])/);
+    const tagName = matched && matched[1] || parts[i];
+    const arrIndex = matched && matched[3] || 0;
+    property = property.getElementsByTagName(tagName)[arrIndex];	
+  }
+
+  return property && property.childNodes[0].nodeValue || '';
+}`,
+  runFunctions: [
+    "getPropertyInXml('<site><name>github</name><user>user1</user><user>user2</user></site>', 'site.user[1]') // user2"
+  ]
+}
+
 const docsData = [
   pagination,
   truncateLongText,
   orderBy,
-  overwrite
+  overwrite,
+  getPropertyInJson,
+  getPropertyInXml
 ];
 
 export default docsData;
