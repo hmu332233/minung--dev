@@ -70,10 +70,11 @@ const getPropertyInJson = {
   name: 'getPropertyInJson',
   description: '"user.id"와 같은 형식으로 object에서 값을 찾는다.',
   def: `const getPropertyInJson = (object, propertyName) => {
-  const parts = propertyName.replace(/\[([0-9]+)\]/g, '.$1').split('.');
+  const parts = propertyName.replace(/\\[([0-9]+)\\]/g, '.$1').split('.');
 
   let property = object;
   for (let i = 0 ; i < parts.length ; i++ ) {
+
     property = property[parts[i]];
   }
 
@@ -95,7 +96,7 @@ const getPropertyInXml = {
 
   let property = xmlDoc;
   for (let i = 0 ; i < parts.length ; i++ ) {
-    const matched = parts[i].match(/(.+)(\[(\d+)\])/);
+    const matched = parts[i].match(/(.+)(\\[(\\d+)\\])/);
     const tagName = matched && matched[1] || parts[i];
     const arrIndex = matched && matched[3] || 0;
     property = property.getElementsByTagName(tagName)[arrIndex];	
