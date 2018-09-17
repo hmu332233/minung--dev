@@ -80,7 +80,7 @@ const getPropertyInJson = {
   return property;
 }`,
   runFunctions: [
-    'getPropertyInJson({ site: { name: "github", users: ["user1", "user2"] }, "site.users[1]") // user2'
+    'getPropertyInJson({ site: { name: "github", users: ["user1", "user2"] }}, "site.users[1]") // user2'
   ]
 }
 
