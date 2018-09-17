@@ -64,11 +64,36 @@ const overwrite = {
   ]
 }
 
+
+
+const getPropertyInJson = {
+  name: 'getPropertyInJson',
+  description: '"user.id"와 같은 형식으로 object에서 값을 찾는다.',
+  def: `const getPropertyInJson = (object, propertyName) => {
+  const parts = propertyName.replace(/\[([0-9]+)\]/g, '.$1').split('.');
+
+  let property = object;
+  for (let i = 0 ; i < parts.length ; i++ ) {
+    property = property[parts[i]];
+  }
+
+  return property;
+}`,
+  runFunctions: [
+    'getPropertyInJson({ site: { name: "github", users: ["user1", "user2"] }, "site.users[1]") // user2'
+  ]
+}
+
+
+
+
+
 const docsData = [
   pagination,
   truncateLongText,
   orderBy,
-  overwrite
+  overwrite,
+  getPropertyInJson
 ];
 
 export default docsData;
