@@ -109,13 +109,27 @@ const getPropertyInXml = {
   ]
 }
 
+const existsWindowVariable = {
+  name: 'existsWindowVariable',
+  description: 'window와 window.변수가 있는지 체크하여 boolean을 리턴한다. 서버랜더링시에 사용한다.',
+  def: `const existsWindowVariable = variableName => {
+	return (typeof window !== 'undefined' && typeof window[variableName] !== 'undefined');
+}`,
+  runFunctions: [
+    "existsWindowVariable('localStorage') // server: false, browser: true"
+  ]
+}
+
+
+
 const docsData = [
   pagination,
   truncateLongText,
   orderBy,
   overwrite,
   getPropertyInJson,
-  getPropertyInXml
+  getPropertyInXml,
+  existsWindowVariable
 ];
 
 export default docsData;
