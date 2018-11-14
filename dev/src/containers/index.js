@@ -1,6 +1,7 @@
 import BasicLayout from './BasicLayout';
-import KeyCodeViewer from './KeyCodeViewer';
+import PerfortantDiffViewer from './PerfortantDiffViewer'
+import KeyCodeViewer from './KeyCodeViewer'
 import RunExample from './RunExample';
 import SideNav from './SideNav';
 
-export { KeyCodeViewer, RunExample, SideNav, BasicLayout };
+export { PerfortantDiffViewer, KeyCodeViewer, RunExample, SideNav, BasicLayout };

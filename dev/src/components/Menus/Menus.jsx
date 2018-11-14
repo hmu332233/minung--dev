@@ -51,6 +51,9 @@ Menus.defaultProps = {
   }, {
     text: 'Docs',
     link: '/docs'
+  }, {
+    text: 'MostPerformant',
+    link: '/most_performant'
   }]
 };
 

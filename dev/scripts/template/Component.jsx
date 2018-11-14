@@ -5,6 +5,8 @@ import styles from './[COMPONENT_NAME].scss';
 class [COMPONENT_NAME] extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {      
+    };
   }
   render() {
     return (
