@@ -120,6 +120,24 @@ const existsWindowVariable = {
   ]
 }
 
+const indexOfAll = {
+  name: 'indexOfAll',
+  description: 'string과 word를 받아 word가 있는 모든 index를 return한다.',
+  def: `const indexOfAll = (str, word) => {
+  if (!str || !word) return [];
+  const regex = new RegExp(word,"gi");
+  const indices = [];
+  let result;
+  while ( (result = regex.exec(str)) ) {
+    indices.push(result.index);
+  }
+  return indices
+}`,
+  runFunctions: [
+    "indexOfAll('test', 't') // [0, 3]
+  ]
+}
+
 
 
 const docsData = [
@@ -129,7 +147,8 @@ const docsData = [
   overwrite,
   getPropertyInJson,
   getPropertyInXml,
-  existsWindowVariable
+  existsWindowVariable,
+  indexOfAll
 ];
 
 export default docsData;
