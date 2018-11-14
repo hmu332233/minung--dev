@@ -134,7 +134,7 @@ const indexOfAll = {
   return indices
 }`,
   runFunctions: [
-    "indexOfAll('test', 't') // [0, 3]
+    "indexOfAll('test', 't') // [0, 3]"
   ]
 }
 
