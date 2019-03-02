@@ -12,6 +12,11 @@ const MENUS = [
     icon: 'home',
     name: 'Document',
     to: '/'
+  },
+  {
+    icon: 'home',
+    name: 'KeyCode',
+    to: '/keycode'
   }
 ];
 

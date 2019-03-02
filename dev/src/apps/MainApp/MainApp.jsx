@@ -4,6 +4,7 @@ import styles from './MainApp.scss';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Document from 'pages/Document';
+import KeyCode from 'pages/KeyCode';
 
 // var ghProjectName = window.location.pathname.split('/')[1];
 const ghProjectName = '';
@@ -18,7 +19,8 @@ class MainApp extends React.Component {
       <div className={styles.MainApp}>
         <Router>
           <React.Fragment>
-            <Route path="/" component={Document} />
+            <Route exact path="/" component={Document} />
+            <Route exact path="/keycode" component={KeyCode} />
           </React.Fragment>
         </Router>
       </div>
