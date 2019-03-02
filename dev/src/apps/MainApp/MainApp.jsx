@@ -18,11 +18,6 @@ class MainApp extends React.Component {
       <div className={styles.MainApp}>
         <Router>
           <React.Fragment>
-            {/*
-            <Route path={`/${ghProjectName}/most_performant`} component={MostPerformant} />
-            <Route path={`/${ghProjectName}/docs`} component={Docs} />
-            <Route path={`/${ghProjectName}/keycode`} component={KeyCode} />
-            */}
             <Route path="/" component={Document} />
           </React.Fragment>
         </Router>

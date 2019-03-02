@@ -8,7 +8,8 @@
         "containers": "./src/containers",
         "actions": "./src/actions",
         "pages": "./src/pages",
-        "data": "./src/data"
+        "data": "./src/data",
+        "hooks": "./src/hooks"
       }
     }]
   ]
