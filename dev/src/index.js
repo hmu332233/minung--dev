@@ -1,27 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import "tabler-react/dist/Tabler.css";
-import { BrowserRouter, Route, Switch  } from 'react-router-dom'
-import { Home, KeyCode, Custom, Docs, MostPerformant } from './pages';
-// Redux
-import { Provider } from 'react-redux';
-import configureStore from './store/configureStore';
 
-const store = configureStore();
+import 'tabler-react/dist/Tabler.css';
 
-var ghProjectName = window.location.pathname.split('/')[1];
+import MainApp from 'apps/MainApp';
 
-ReactDOM.render(
-  <Provider store={store}>
-    <BrowserRouter>
-      <Switch>
-        <Route path={`/${ghProjectName}/most_performant`} component={MostPerformant} />
-        <Route path={`/${ghProjectName}/docs`} component={Docs} />
-        <Route path={`/${ghProjectName}/keycode`} component={KeyCode} />
-        <Route path={`/${ghProjectName}/:path`} component={Custom} />
-        <Route path={`/${ghProjectName}`} component={Home} />
-      </Switch>
-    </BrowserRouter>
-  </Provider>
-  , document.getElementById('app')
-);
+ReactDOM.render(<MainApp />, document.getElementById('app'));

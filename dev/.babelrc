@@ -1,20 +1,15 @@
 {
-  "presets": ["env", "react"],
+  "presets": ["@babel/preset-env", "@babel/preset-react"],
   "plugins" : [
-    "transform-async-to-generator",
-    [
-      "module-resolver",
-      {
-        // root 폴더 설정
-        "root": "./src",
-        "alias": {
-          "components": "./src/components",
-          "containers": "./src/containers",
-          "actions": "./src/actions",
-          "pages": "./src/pages",
-          "data": "./src/data"
-        }
-      }      
-    ]
+    ["babel-plugin-module-resolver", {
+      "root": ["./src"],
+      "alias": {
+        "components": "./src/components",
+        "containers": "./src/containers",
+        "actions": "./src/actions",
+        "pages": "./src/pages",
+        "data": "./src/data"
+      }
+    }]
   ]
 }
